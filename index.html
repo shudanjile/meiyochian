@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>個人簡介</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+<div class="container">
+<h1 class="site-title">我的個人簡介</h1>
+<ul class="nav-links">
+<li><a href="#home">首頁</a></li>
+<li><a href="#about">作者介紹</a></li>
+<li><a href="#work">作品</a></li>
+<li><a href="#contact">聯繫方式</a></li>
+</ul>
+</div>
+</header>
+<section class="hero-section" id="home">
+<img src="my-photo.jpg" alt="背景照片">
+<div class="hero-text">
+<h1>前置任務</h1>
+<h2 class="subheading">學習遊戲製作歷程</h2>
+</div>
+</section>
+<section class="about-section" id="about">
+<div class="about-container">
+<div class="about-left">
+<h2>作者簡介</h2>
+<img src="me.jpg" alt="個人照片" class="profile-photo">
+</div>
+<div class="about-right">
+<h3 class="about-subheading">做好自己能做的事</h3>
+<p>我是梁勛丞，目前位於南台科技大學就讀多樂系二年級，熱愛遊玩各種不同類型的遊戲，玩過多種遊戲後的感想是想成為遊戲製作的一員，而不只是享受遊戲成果的一方，我的理想是成為一名合格的programmer
+</p>
+</div>
+</div>
+</section>
+<section class="work-section" id="work">
+<h2 class="work-title">作品<h2>
+<div class="work-container">
+<div class="work-item" onclick="openModal('table-game.png','誰是社交王','讓在生活中遇到社交困難的人們得以用這款破冰遊戲不管是與家人、朋友、同事都能藉此機會增進彼此感情。')">
+<img src="table-game.jpg" alt="作品一">
+<h3 class="work-subheading">誰是社交王</h3>
+<p class="work-content">設計用以破冰的教育性質桌遊</p>
+</div>
+<div class="work-item" onclick="openModal('work-2.png','喵星使者','為了抓捕逃離的貓咪靈魂的喵星執法者')">
+<img src="work-2.png" alt="作品二">
+<h3 class="work-subheading">喵星使者</h3>
+<p class="work-content">作為遊戲中的反派角色設定</p>
+</div>
+<div class="work-item" onclick="openModal('work-3.png','吉米','遊戲中死後為了回到主人身邊而躲避著喵興使者的主角')">
+<img src="work-3.png" alt="作品三">
+<h3 class="work-subheading">吉米</h3>
+<p class="work-content">作為遊戲主角的角色設定</p>
+</div>
+</div>
+</section>
+<section class="contact-section" id="contact">
+<div class="contact-wrapper">
+<h2 class="contact-title">聯繫我</h2>
+<div class="contact-icons">
+<div class="contact-item">
+<img src="ig-icon.jpg" alt="Instagram">
+<a href="https://www.instagram.com/shudanjile?igsh=MWU3YWVucnpvZGkzMQ%3D%3D&utm_source=qr" target="_blank">Instagram</a>
+</div>
+<div class="contact-item">
+<img src="fb-icon.jpg" alt="Facebook">
+<a href="https://www.facebook.com/share/1C4k6zy6bZ/?mibextid=wwXIfr" target="_blank">Facebook</a>
+</div>
+<div class="contact-item">
+<img src="gmail-icon.jpg" alt="Email">
+<a href="mailto:xunchenliang@gmail.com">Email</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+</body>
+<div class="modal" id="modal">
+<div class="modal-content">
+<span class="close-btn" onclick="closeModal()">&times;</span>
+<div class="modal-body">
+<div class="modal-image">
+<img id="modal-img" src="" alt="">
+</div>
+<div class="modal-divider"></div>
+<div class="modal-text">
+<h3 id="modal-title"></h3>
+<p id="modal-desc"></p>
+</div>
+</div>
+</div>
+</div>
+</html>
+<script>
+function openModal(imgSrc, title, desc) {
+document.getElementById("modal-img").src = imgSrc;
+document.getElementById("modal-title").textContent = title;
+document.getElementById("modal-desc").textContent = desc;
+document.getElementById("modal").style.display = "flex";
+}
+function closeModal() {
+document.getElementById("modal").style.display = "none";
+}
+</script>
+Style.css的程式碼:
+html {
+scroll-behavior: smooth;
+}
+/* 全站字體與基本設定 */
+body {
+margin: 0;
+font-family: "Segoe UI", sans-serif;
+background-color: #f5f5f5;
+}
+/* Navbar */
+header {
+background-color: white;
+border-bottom: 2px solid #ddd;
+padding: 2rem 0;
+position: sticky;
+top: 0;
+z-index: 100;
+}
+/* Navbar 內部排列方式 */
+.navbar {
+max-width: 1200px;
+margin: auto;
+padding: 0 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+position: relative;
+}
+/* 網站名稱置中 */
+.site-title {
+position: absolute;
+top: 10px;
+left: 50%;
+transform: translateX(-50%);
+margin: 0;
+font-size: 3rem;
+font-weight: bold;
+color: #333;
+}
+.nav-links {
+display: flex;
+gap: 1rem;
+list-style: none;
+margin: 0;
+padding: 1;
+}
+.nav-links a {
+text-decoration: none;
+color: #333;
+font-weight: 500;
+padding: 6px 10px;
+border-radius: 4px;
+transition: background-color 0.3s;
+}
+.nav-links a:hover {
+background-color: #eee;
+}
+/* HERO 區塊 */
+.hero-section {
+position: relative;
+width: 100%;
+height: 100vh; /* 調整高度vh 表示螢幕高度百分比 */
+overflow: hidden;
+}
+.hero-section img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+.hero-text {
+position: absolute;
+top: 50%;
+left: 20%;
+transform: translate(-50%, -50%);
+text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.6);
+text-align: center;
+z-index: 10;
+}
+.hero-text h1 {
+font-size: 5rem;
+margin-bottom: 1rem;
+font-weight: bold;
+color: rgb(0, 0, 0);
+}
+.hero-text .subheading{
+font-size: 2rem;
+font-weight: bold;
+color: rgb(0, 0, 0);
+}
+/* About 區塊 */
+.about-section {
+background-color: white;
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 20px 20px;
+}
+.about-container {
+display: flex;
+max-width: 1200px;
+width: 100%;
+gap: 40px;
+}
+.about-left {
+flex: 3;
+text-align: center;
+}
+.about-left h2 {
+font-size: 2.5rem;
+margin-bottom: 1.5rem;
+}
+.profile-photo {
+width: auto;
+height: 500px;
+margin-top: 20px;
+border-radius: 12px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.about-right {
+flex: 7;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+}
+.about-subheading {
+font-size: 1.8rem;
+margin-bottom: 1rem;
+color: #000000;
+}
+.about-right p {
+font-size: 1.5rem;
+line-height: 1.8;
+color: #444;
+}
+/* Work 區塊 */
+.work-section {
+background-color: white;
+padding: 100px 20px;
+text-align: center;
+}
+.work-title {
+font-size: 2.5rem;
+margin-bottom: 100px;
+color: #000000;
+}
+.work-container {
+display: flex;
+justify-content: center;
+gap: 150px;
+flex-wrap: wrap;
+max-width: 1200px;
+margin: auto;
+}
+.work-item {
+flex: 1;
+min-width: 250px;
+max-width: 300px;
+background-color: #f9f9f9;
+border-radius: 12px;
+padding: 20px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+text-align: center;
+cursor: pointer; /*滑鼠變指標*/
+}
+.work-item img {
+width: 100%;
+height: auto;
+border-radius: 8px;
+margin-bottom: 1rem;
+}
+.work-subheading {
+font-size: 1.5rem;
+color: #222;
+margin: 10px 0 5px;
+}
+.work-content {
+font-size: 1rem;
+color: #555;
+line-height: 1.6;
+}
+/* 彈跳視窗 */
+.modal {
+display: none;
+position: fixed;
+z-index: 999;
+left: 0; top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0,0,0,0.6);
+justify-content: center;
+align-items: center;
+}
+/*內容 */
+.modal-content {
+background-color: white;
+width: 80%;
+max-width: 900px;
+border-radius: 10px;
+padding: 20px;
+position: relative;
+}
+.modal-body {
+display: flex;
+gap: 20px;
+align-items: flex-start;
+}
+.modal-image img {
+max-width: 300px;
+width: 100%;
+border-radius: 8px;
+}
+/* 分隔線 */
+.modal-divider {
+width: 2px;
+background-color: #ccc;
+height: 100%;
+}
+/* 右側文字區 */
+.modal-text {
+flex: 1;
+}
+.modal-text h3 {
+margin-top: 0;
+font-size: 1.8rem;
+color: #222;
+}
+.modal-text p {
+font-size: 1rem;
+line-height: 1.6;
+color: #444;
+}
+/* 關閉按鈕 */
+.close-btn {
+position: absolute;
+top: 15px;
+right: 20px;
+font-size: 2rem;
+color: #555;
+cursor: pointer;
+}
+/* Contact 區塊 */
+.contact-section {
+background-color: white;
+padding: 100px 20px;
+text-align: center;
+}
+.contact-title {
+font-size: 2.5rem;
+margin-bottom: 40px;
+color: #333;
+}
+.contact-icons {
+display: flex;
+justify-content: center;
+gap: 50px;
+flex-wrap: wrap;
+}
+.contact-item {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.contact-item img {
+width: 60px;
+height: 60px;
+margin-bottom: 10px;
+cursor: pointer;
+transition: transform 0.3s;
+}
+.contact-item img:hover {
+transform: scale(1.1);
+}
+.contact-item a {
+text-decoration: none;
+color: #0077cc;
+font-weight: bold;
+font-size: 1.1rem;
+}
+.contact-item a:hover {
+text-decoration: underline;
+}
